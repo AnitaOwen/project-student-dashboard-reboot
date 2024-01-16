@@ -1,9 +1,22 @@
+import Header from "./components/Header";
+import About from "./components/About";
+import Aside from "./components/Aside"
+import StudentsIndex from "./components/StudentsIndex";
+import ShowStudent from "./components/ShowStudent";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
+    <>
+    <Header />
+    <About />
+    <Aside />
+    <Home />
+    <StudentsIndex />
+    <ShowStudent />
+    </>
+    
+
   );
 }
 
