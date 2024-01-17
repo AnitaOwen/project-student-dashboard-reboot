@@ -1,8 +1,8 @@
 import Header from "./components/Header";
 import About from "./components/About";
 import Aside from "./components/Aside"
-import StudentsIndex from "./components/StudentsIndex";
-import ShowStudent from "./components/ShowStudent";
+import StudentList from "./components/StudentList"
+import Student from "./components/Student";
 import Home from "./components/Home";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <About />
     <Aside />
     <Home />
-    <StudentsIndex />
-    <ShowStudent />
+    <StudentList />
+    <Student />
     </>
     
 
