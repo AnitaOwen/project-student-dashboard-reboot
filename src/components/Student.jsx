@@ -4,10 +4,11 @@ const Student = ({ student }) => {
   const name = student.names;
   return (
     <div>
-      <p>
+      <img src={student.profilePhoto} alt={name.preferredName} />
+      <h2>
         {name.preferredName} {name.middleName} {name.surname}
-      </p>
-      <p>Email: {student.username}</p>
+      </h2>
+      <h3>Email: {student.username}</h3>
       <p>Birthday: {student.dob}</p>
     </div>
   );
