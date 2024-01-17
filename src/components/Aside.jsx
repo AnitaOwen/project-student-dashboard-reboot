@@ -1,29 +1,46 @@
 import React from "react";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import StudentList from "./StudentList";
 
-const Aside = ({ allStudents }) => {
-  const { cohortCode } = useParams();
-  const studentCohort = allStudents.map((student) => {
-    return student.cohort.cohortCode;
-  });
 
-  const winter2025 = allStudents.filter((student) => {
-    return student.cohort.cohortCode === "Winter2025";
-  });
-  console.log(winter2025);
+const Aside = ({ allStudents, handleOnClick }) => {
+
   return (
     <div>
       <ul>
         <li>All Students</li>
-        <li>Winter 2025</li>
-        <li>Spring 2025</li>
-        <li>Summer 2025</li>
-        <li>Fall 2025</li>
-        <li>Winter 2026</li>
-        <li>Spring 2026</li>
-        <li>Summer 2026</li>
-        <li>Fall 2026</li>
+
+        <li onClick={() => handleOnClick("Winter2025")}>
+          <Link to="/students/Winter2025">Winter 2025</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Spring2025")}>
+          <Link to="/students/Spring2025">Spring 2025</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Summer2025")}>
+          <Link to="/students/Summer2025">Summer 2025</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Fall2025")}>
+          <Link to="/students/Fall2025">Fall 2025</Link>
+        </li>
+        <li onClick={() => handleOnClick("Winter2026")}>
+          <Link to="/students/Winter2026">Winter 2026</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Spring2026")}>
+          <Link to="/students/Spring2026">Spring 2026</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Summer2026")}>
+          <Link to="/students/Summer2026">Summer 2026</Link>
+        </li>
+
+        <li onClick={() => handleOnClick("Fall2026")}>
+          <Link to="/students/Fall2026">Fall 2026</Link>
+        </li>
+
       </ul>
     </div>
   );

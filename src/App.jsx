@@ -1,15 +1,25 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Home from "./components/Home";
-import { useState } from "react";
-import { useEffect } from "react";
 import { getAllStudents } from "./api/fetch";
 
 function App() {
   const [allStudents, setAllStudents] = useState([]);
+
+  const { cohortCode } = useParams();
+  const [selectedCohort, setSelectedCohort] = useState(cohortCode)
+  
+  const matchingCohort = allStudents.filter((student) => {
+    return student.cohort.cohortCode === selectedCohort;
+  });
+  
+  function handleOnClick(cohort){
+    setSelectedCohort(cohort)
+  }
 
   useEffect(() => {
     getAllStudents()
@@ -21,19 +31,19 @@ function App() {
         console.error(error);
       });
   }, []);
-
+  
   return (
     <div>
       <Header />
       <About />
-      <Aside allStudents={allStudents} />
+      <Aside allStudents={allStudents} handleOnClick={handleOnClick} />
 
       <Routes>
         <Route path="/" element={<Home />} />
 
         <Route path="/students">
           <Route index element={<StudentList allStudents={allStudents} />} />
-          {/* <Route path=":cohortCode" element={<StudentList />} /> */}
+          <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort}/>} />
         </Route>
       </Routes>
     </div>
