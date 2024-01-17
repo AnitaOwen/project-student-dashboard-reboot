@@ -4,7 +4,7 @@ import Student from "./Student";
 
 
 const StudentList = () => {
-  const [allstudents, setAllStudents] = useState([]);
+  const [allStudents, setAllStudents] = useState([]);
 
   useEffect (()=> {
     getAllStudents()
@@ -19,8 +19,10 @@ const StudentList = () => {
 
   return (
     <div>
-      Student List
-      <Student />
+      {allStudents.map((student) => (
+    <Student key={student.id} student={student} />
+  ))};
+      {/* <Student /> */}
       </div>
   )
 }

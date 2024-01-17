@@ -4,8 +4,6 @@ import About from "./components/About";
 import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Home from "./components/Home";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
 
 function App() {
   return (
