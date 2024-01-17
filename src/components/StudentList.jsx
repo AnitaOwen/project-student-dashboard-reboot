@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 import { getAllStudents } from "../api/fetch";
-import Student from "./components/Student";
+import Student from "./Student";
 
-const StudentsIndex = () => {
+
+const StudentList = () => {
   const [allstudents, setAllStudents] = useState([]);
 
   useEffect (()=> {
@@ -18,10 +19,10 @@ const StudentsIndex = () => {
 
   return (
     <div>
-      StudentsIndex
+      Student List
       <Student />
       </div>
   )
 }
 
-export default StudentsIndex
+export default StudentList

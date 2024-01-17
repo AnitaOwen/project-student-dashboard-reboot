@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import About from "./components/About";
 import Aside from "./components/Aside"
@@ -15,7 +16,7 @@ function App() {
 
       <Route path="/students">
           <Route index element={<StudentList />} /> 
-          <Route path=":cohortCode" element={<StudentList />} />
+          {/* <Route path=":cohortCode" element={<StudentList />} /> */}
         </Route>
     </Routes>
     </div>
