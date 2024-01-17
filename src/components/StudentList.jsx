@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { getAllStudents } from "../api/fetch";
+import Student from "./components/Student";
 
 const StudentsIndex = () => {
   const [allstudents, setAllStudents] = useState([]);
@@ -16,7 +17,10 @@ const StudentsIndex = () => {
   }, [])
 
   return (
-    <div>StudentsIndex</div>
+    <div>
+      StudentsIndex
+      <Student />
+      </div>
   )
 }
 
