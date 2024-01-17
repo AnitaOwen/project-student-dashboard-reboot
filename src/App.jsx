@@ -1,26 +1,26 @@
 import Header from "./components/Header";
 import About from "./components/About";
-import Aside from "./components/Aside"
-import StudentList from "./components/StudentList"
+import Aside from "./components/Aside";
+import StudentList from "./components/StudentList";
 import Home from "./components/Home";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
-    <Header />
-    <About />
-    <Aside />
-    <Routes>
-      <Route path="/" element={<Home />} />
+      <Header />
+      <About />
+      <Aside />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Route path="/students">
-          <Route index element={<StudentList />} /> 
+        <Route path="/students">
+          <Route index element={<StudentList />} />
           <Route path=":cohortCode" element={<StudentList />} />
         </Route>
-    </Routes>
+      </Routes>
     </div>
-    
-
   );
 }
 

@@ -6,6 +6,4 @@ Welcome to the Student Dashboard Single Page Application (SPA) built with ReactJ
 
 These instructions will help you set up and run the Student Dashboard SPA on your local machine.
 
-
-
-
+jj
