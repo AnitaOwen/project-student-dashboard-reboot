@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const Student = () => {
+const Student = ({ student }) => {
+  const name = student.names;
   return (
-    <div>Student</div>
-  )
-}
+    <div>
+      <p>
+        {name.preferredName} {name.middleName} {name.surname}
+      </p>
+      <p>Email: {student.username}</p>
+      <p>Birthday: {student.dob}</p>
+    </div>
+  );
+};
 
-export default Student
+export default Student;
