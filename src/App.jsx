@@ -17,6 +17,7 @@ function App() {
   const matchingCohort = allStudents.filter((student) => {
     return student.cohort.cohortCode === selectedCohort;
   });
+  console.log(matchingCohort)
 
   function handleOnClick(cohort){
     setSelectedCohort(cohort)
