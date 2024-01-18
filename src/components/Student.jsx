@@ -16,7 +16,7 @@ const Student = ({ student }) => {
       <h2>
         {name.preferredName} {name.middleName} {name.surname}
       </h2>
-      <h3>Email: {student.username}</h3>
+      <h3>{student.username}</h3>
       <p>Birthday: {birthday.toLocaleDateString('en-US', options)}</p>
     </div>
   );
