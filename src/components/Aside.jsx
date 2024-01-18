@@ -7,7 +7,7 @@ const Aside = ({ allStudents, handleOnClick }) => {
 
   return (
     <div>
-      <ul>
+      <ul className="sidebar">
         <li>All Students</li>
 
         <li onClick={() => handleOnClick("Winter2025")}>
