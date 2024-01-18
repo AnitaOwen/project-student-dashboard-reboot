@@ -46,7 +46,6 @@ function App() {
         <Route path="/about" element={<About />} />
         
         <Route path="/students">
-
           <Route index element={<StudentList allStudents={allStudents}/>} />
           <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort} selectedCohort={selectedCohort} />} />
         </Route>
