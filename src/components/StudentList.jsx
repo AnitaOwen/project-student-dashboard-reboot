@@ -1,5 +1,3 @@
-// import { useState, useEffect } from "react"
-import { getAllStudents } from "../api/fetch";
 import Student from "./Student";
 
 
