@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import StudentList from "./StudentList";
 
 
-const Aside = ({ allStudents, handleOnClick }) => {
+const Aside = ({ handleOnClick }) => {
 
   return (
     <div>
