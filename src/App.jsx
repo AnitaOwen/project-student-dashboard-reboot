@@ -40,19 +40,17 @@ function App() {
       <Header />
       <Aside handleOnClick={handleOnClick} />
       <Routes>
-       
         <Route path="/" element={<Home />} />
-        
+
         <Route path="/about" element={<About />} />
         
         <Route path="/students">
-        <Route index element={<StudentList allStudents={allStudents} />} />
-        <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort}/>} />
-        
-      </Route>
-      
+          <Route index element={<StudentList allStudents={allStudents}/>} />
+          <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort} selectedCohort={selectedCohort} />} />
+        </Route>
+
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
