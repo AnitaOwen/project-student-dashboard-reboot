@@ -8,7 +8,7 @@ const Aside = ({ allStudents, handleOnClick }) => {
   return (
     <div>
       <ul className="sidebar">
-        <li>All Students</li>
+        <li><Link to="/students">All Students</Link></li>
 
         <li onClick={() => handleOnClick("Winter2025")}>
           <Link to="/students/Winter2025">Winter 2025</Link>
