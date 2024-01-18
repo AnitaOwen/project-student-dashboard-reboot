@@ -1,7 +1,7 @@
 import { Route, Routes, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
-import About from "./components/About";
+import Footer from "./components/Footer";
 import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Home from "./components/Home";
@@ -35,7 +35,6 @@ function App() {
   return (
     <div>
       <Header />
-      <About />
       <Aside allStudents={allStudents} handleOnClick={handleOnClick} />
 
       <Routes>
@@ -46,6 +45,7 @@ function App() {
           <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort}/>} />
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
