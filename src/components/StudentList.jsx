@@ -14,13 +14,13 @@ const StudentList = ({allStudents, selectedCohort}) => {
 
   return (
     <>
-    <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
-    <div>
-      {allStudents.map((student) => (
-    <Student key={student.id} student={student} />
-  ))}
+      <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
+      <div>
+        {allStudents.map((student) => (
+      <Student key={student.id} student={student} />
+      ))}
       </div>
-      </>
+    </>
   )
 }
 

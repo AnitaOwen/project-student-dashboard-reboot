@@ -7,6 +7,7 @@ const Aside = ({ handleOnClick }) => {
 
   return (
     <div>
+      <button>Sort Descending by Year</button>
       <ul className="sidebar">
         <li><Link to="/students">All Students</Link></li>
 
@@ -40,7 +41,6 @@ const Aside = ({ handleOnClick }) => {
         <li onClick={() => handleOnClick("Fall2026")}>
           <Link to="/students/Fall2026">Fall 2026</Link>
         </li>
-
       </ul>
     </div>
   );
