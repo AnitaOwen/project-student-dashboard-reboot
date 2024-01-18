@@ -6,6 +6,7 @@ import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Home from "./components/Home";
 import Footer from "./components/Footer"
+import ShowStudent from "./components/ShowStudent";
 
 import { getAllStudents } from "./api/fetch";
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/students">
         <Route index element={<StudentList allStudents={allStudents} />} />
         <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort}/>} />
+        
         
       </Route>
       
