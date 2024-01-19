@@ -4,3 +4,17 @@ li {
 body {
   font-family: sans-serif;
 }
+.student {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border: solid #000000 1px;
+  width: 388px;
+}
+.student:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.5);
+}
