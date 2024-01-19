@@ -23,17 +23,17 @@ const StudentList = ({ allStudents, selectedCohort }) => {
   const searchResults = filterStudents()
   
   
-  const count = allStudents.length// make as state
+  const count = allStudents.length
   // console.log(count)
 
   let cohortTitle = ""
-  if(selectedCohort){
+  if(selectedCohort && selectedCohort === "All Students"){
+    cohortTitle = "All Students"
+  } else if (selectedCohort && selectedCohort !== "All Students"){
     const titleArray = selectedCohort.split("")
     const season = titleArray.filter((char) => isNaN(+char) === true).join("")
     const year = titleArray.filter((char) => isNaN(+char) === false).join("")
-    cohortTitle = `${season} ${year}` 
-  } else{
-    cohortTitle = "All Students"
+    cohortTitle = `${season} ${year}`
   }
 
   function handleListView(){
@@ -68,7 +68,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
       <div>
         {searchInput === "" && (
           <>
-            <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
+            <h2>{cohortTitle} ({count})</h2>
             <div>
               {allStudents.map((student) => (
               <Student key={student.id} student={student} listView={listView} />
@@ -83,7 +83,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
           searchResults.map((result)=>(
             <Student key={result.id} student={result} listView={listView}/>
           ))) : (
-          <p>No student with a name containing "{searchInput}" found in {selectedCohort ? cohortTitle : "All Students"}.</p>
+          <p>No student with a name containing "{searchInput}" found in {cohortTitle}.</p>
         )}
       </div>
 
