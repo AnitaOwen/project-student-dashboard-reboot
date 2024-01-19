@@ -60,6 +60,17 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
           <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
           <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
 
+        
+          <p>
+            Student On Track?:{" "}
+            {student.certifications.resume &&
+            student.certifications.linkedin &&
+            student.certifications.github &&
+            student.certifications.mockInterview
+              ? "✅"
+              : "❌"}
+          </p>
+
           {/* 1-on-1 Notes Section */}
           <section>
             <h3>1-on-1 Notes</h3>
