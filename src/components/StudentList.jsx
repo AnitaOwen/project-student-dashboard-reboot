@@ -1,28 +1,31 @@
 import Student from "./Student";
-// import { useState } from "react";
+import { useState } from "react";
 
 
 const StudentList = ({allStudents, selectedCohort}) => {
-  // const [searchInput, setSearchInput] = useState("")
+  const [searchInput, setSearchInput] = useState("")
 
-  // function filterStudents(){
-  //   return allStudents.filter((student)=> {
-  //     const name = student.names
-  //     const fullName = `${name.preferredName} ${name.middleName} ${name.surname}`
-  //     return fullName.toLowerCase().match(searchInput.toLowerCase())
-  //   })
-  // }
+  function filterStudents(){
+    return allStudents.filter((student)=> {
+      const name = student.names
+      const firstName = name.preferredName
+      const lastName = name.surname
+      const firstNameMatch = firstName.toLowerCase().match(searchInput.toLowerCase())
+      const lastNameMatch = lastName.toLowerCase().match(searchInput.toLowerCase())
+      return firstNameMatch || lastNameMatch
+    })
+  }
   
-  // function handleTextChange(event){
-  //   const input = event.target.value
-  //   setSearchInput(input)
-  // }
+  function handleTextChange(event){
+    const input = event.target.value
+    setSearchInput(input)
+  }
   
-  // function handleCancel(){
-  //   setSearchInput("")
-  // }
+  function handleCancel(){
+    setSearchInput("")
+  }
 
-  // const searchResults = filterStudents()
+  const searchResults = filterStudents()
   
   const count = allStudents.length
   let cohortTitle;
@@ -47,18 +50,33 @@ const StudentList = ({allStudents, selectedCohort}) => {
         </form>
       </div>
 
-      {/* <div>
-        {searchResults.length > 0 && searchResults.map((result) => (
-        <Student key={result.id} student={result} />
-      ))}
-      </div> */}
+      <div>
+        {searchResults.length > 0 ? (
+          searchResults.map((result)=>(
+            <Student key={result.id} student={result} />
+          ))) : (
+          <p>No students with the name "{searchInput}" found in this list.</p>
+        )}
 
-      <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
+      </div>
+      <div>
+        {searchInput.length === 0 && (
+          <>
+            <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
+            <div>
+              {allStudents.map((student) => (
+              <Student key={student.id} student={student} />
+              ))}
+            </div> 
+          </>
+        )} 
+      </div>
+      {/* <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
       <div>
         {allStudents.map((student) => (
       <Student key={student.id} student={student} />
       ))}
-      </div>
+      </div> */}
     </main>
   )
 }
