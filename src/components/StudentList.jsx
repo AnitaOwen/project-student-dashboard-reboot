@@ -68,7 +68,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
       <div>
         {searchInput === "" && (
           <>
-            <h2>{cohortTitle} ({count})</h2>
+            <h2>{cohortTitle ? cohortTitle : "All Students"} ({count})</h2>
             <div>
               {allStudents.map((student) => (
               <Student key={student.id} student={student} listView={listView} />
