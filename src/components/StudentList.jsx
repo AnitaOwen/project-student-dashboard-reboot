@@ -23,7 +23,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
   const searchResults = filterStudents()
   
   
-  const count = allStudents.length
+  const count = allStudents.length// make as state
   // console.log(count)
 
   let cohortTitle;
