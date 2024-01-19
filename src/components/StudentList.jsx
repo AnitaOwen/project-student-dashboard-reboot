@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const StudentList = ({ allStudents, selectedCohort }) => {
   const [searchInput, setSearchInput] = useState("")
+  const [listView, setListView] = useState(false)
 
   function handleTextChange(event){
     const input = event.target.value
@@ -33,8 +34,12 @@ const StudentList = ({ allStudents, selectedCohort }) => {
     cohortTitle = `${season} ${year}`
   }
 
+  function handleListView(){
+    setListView(!listView)
+  }
   return (
     <main>
+
       <div>
         <form>
           <label htmlFor="searchInput">
@@ -51,6 +56,12 @@ const StudentList = ({ allStudents, selectedCohort }) => {
           </div>
         </form>
       </div>
+
+      <div>
+        <button onClick={handleListView}>
+          {listView ? "Switch to Normal View" : "Switch to List View"}
+        </button>
+      </div>
       
       <div>
         {searchInput === "" && (
@@ -58,7 +69,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
             <h2>{selectedCohort ? cohortTitle : "All Students"} ({count})</h2>
             <div>
               {allStudents.map((student) => (
-              <Student key={student.id} student={student} />
+              <Student key={student.id} student={student} listView={listView} />
               ))}
             </div> 
           </>
