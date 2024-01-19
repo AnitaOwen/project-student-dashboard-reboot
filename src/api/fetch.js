@@ -9,5 +9,5 @@ export function getAllStudents() {
 // Get one student based on ID
 
 // export function getOneStudent(id) {
-//   return fetch(`${URL}/students/id`).then((response) => response.json());
+//   return fetch(`${URL}/students/${id}`).then((response) => response.json());
 // }

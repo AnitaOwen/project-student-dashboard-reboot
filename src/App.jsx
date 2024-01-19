@@ -6,6 +6,10 @@ import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Footer from "./components/Footer"
 
+
+import StudentInfo from "./components/StudentInfo";
+
+
 import { getAllStudents } from "./api/fetch";
 
 function App() {
@@ -39,13 +43,17 @@ function App() {
       <Header />
       <Aside handleOnClick={handleOnClick} />
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/students">
-          <Route index element={<StudentList allStudents={allStudents}/>} />
-          <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort} selectedCohort={selectedCohort} />} />
-        </Route>
+
+      <Route path="/about" element={<About />} />
+        
+      <Route path="/students">
+        <Route index element={<StudentList allStudents={allStudents} />} />
+        <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort}/>} />
+        <Route path=":id" element={<StudentInfo />} />
+      </Route>
+      
       </Routes>
-      <Footer />
+      <Footer/>
     </div>
   );
 }
