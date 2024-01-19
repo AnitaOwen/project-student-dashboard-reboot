@@ -26,12 +26,14 @@ const StudentList = ({ allStudents, selectedCohort }) => {
   const count = allStudents.length
   // console.log(count)
 
-  let cohortTitle;
+  let cohortTitle = ""
   if(selectedCohort){
     const titleArray = selectedCohort.split("")
     const season = titleArray.filter((char) => isNaN(+char) === true).join("")
     const year = titleArray.filter((char) => isNaN(+char) === false).join("")
-    cohortTitle = `${season} ${year}`
+    cohortTitle = `${season} ${year}` 
+  } else{
+    cohortTitle = "All Students"
   }
 
   function handleListView(){
@@ -43,7 +45,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
       <div>
         <form>
           <label htmlFor="searchInput">
-            Search {selectedCohort ? cohortTitle : "All Students"}:
+          Search { cohortTitle }:
           </label>
           <div>
           <input 

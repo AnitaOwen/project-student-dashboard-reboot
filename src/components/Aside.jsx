@@ -27,7 +27,7 @@ const Aside = ({ handleOnClick }) => {
       </button>
       
       <ul className="sidebar">
-        <li><Link to="/students">All Students</Link></li>
+        <li><Link to="/students" onClick={()=> handleOnClick("All Students")}>All Students</Link></li>
         
         {isReversed ? [...cohortsList].reverse().map((cohort) => (
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
