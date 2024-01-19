@@ -45,7 +45,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
       <div>
         <form>
           <label htmlFor="searchInput">
-          Search { cohortTitle }:
+          Search {cohortTitle ? cohortTitle : "All Students"}:
           </label>
           <div>
           <input 
