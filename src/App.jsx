@@ -6,6 +6,7 @@ import Aside from "./components/Aside";
 import StudentList from "./components/StudentList";
 import Footer from "./components/Footer"
 import StudentInfo from "./components/StudentInfo";
+import Home from "./components/Home";
 import { getAllStudents } from "./api/fetch";
 
 function App() {
@@ -37,9 +38,10 @@ function App() {
   return (
     <div>
       <Header />
+      
       <Aside handleOnClick={handleOnClick} />
       <Routes>
-
+      <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
         
       <Route path="/students">

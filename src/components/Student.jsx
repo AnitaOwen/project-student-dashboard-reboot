@@ -16,7 +16,7 @@ const Student = ({ student, listView }) => {
     <div>
       {listView ? (
         <>
-        <Link to={`student/${student.id}`}>
+        <Link to={`/student/${student.id}`}>
           <h3>
             {name.preferredName} {name.middleName} {name.surname}
           </h3>
