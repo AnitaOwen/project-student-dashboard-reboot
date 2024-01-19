@@ -14,17 +14,17 @@ const Student = ({ student, listView }) => {
     <div>
       {listView ? (
         <>
-          <h2>
+          <h3>
             {name.preferredName} {name.middleName} {name.surname}
-          </h2>
+          </h3>
         </>
       ) : (
         <>
           <img src={student.profilePhoto} alt={name.preferredName} />
-          <h2>
+          <h3>
             {name.preferredName} {name.middleName} {name.surname}
-          </h2>
-          <h3>{student.username}</h3>
+          </h3>
+          <p>{student.username}</p>
           <p>Birthday: {birthday.toLocaleDateString('en-US', options)}</p>
         </>
       )}
