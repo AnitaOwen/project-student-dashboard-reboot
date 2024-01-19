@@ -6,7 +6,7 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
   // useParams
   const { id } = useParams();
   //useStates
-  const [formInput, setFormInput] = useState({ author: "", comment: "" });
+  const [formInput, setFormInput] = useState({ author: '', comment: '' });
   const [notes, setNotes] = useState([]);
   const [student, setStudent] = useState(null);
   //useEffect
@@ -23,7 +23,7 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
       comment: formInput.comment,
     };
     setNotes([...notes, newNote]);
-    setFormInput({ author: "", comment: "" });
+    setFormInput({ author: '', comment: '' });
   };
 
   const handleTextChange = (event) => {
@@ -44,36 +44,21 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
           <p>Goal Total: {student.codewars.goal.total}</p>
           <p>
             Percent of Goal Achieved:{" "}
-            {(
-              (student.codewars.current.total / student.codewars.goal.total) *
-              100
-            ).toFixed(2)}
-            %
+            {((student.codewars.current.total / student.codewars.goal.total) * 100).toFixed()}%
           </p>
 
           {/* Scores Heading */}
           <h2>Scores</h2>
-          <p>Assignments: {student.cohort.scores.assignments}%</p>
-          <p>Projects: {student.cohort.scores.projects}%</p>
-          <p>Assessments: {student.cohort.scores.assessments}%</p>
+          <p>Assignments: {(student.cohort.scores.assignments * 100).toFixed()}%</p>
+          <p>Projects: {(student.cohort.scores.projects * 100).toFixed()}%</p>
+          <p>Assessments: {(student.cohort.scores.assessments * 100).toFixed()}%</p>
 
           {/* Certifications Heading */}
           <h2>Certifications</h2>
           <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
           <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
           <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
-          <p>
-            Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}
-          </p>
-          <p>
-            Student On Track?:{" "}
-            {student.certifications.resume &&
-            student.certifications.linkedin &&
-            student.certifications.github &&
-            student.certifications.mockInterview
-              ? "✅"
-              : "❌"}
-          </p>
+          <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
 
           {/* 1-on-1 Notes Section */}
           <section>
@@ -116,3 +101,4 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
 };
 
 export default StudentInfo;
+
