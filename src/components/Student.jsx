@@ -18,7 +18,7 @@ const Student = ({ student, listView }) => {
             {name.preferredName} {name.middleName} {name.surname}
           </h2>
         </>
-      ) : 
+      ) : (
         <>
           <img src={student.profilePhoto} alt={name.preferredName} />
           <h2>
@@ -27,7 +27,7 @@ const Student = ({ student, listView }) => {
           <h3>{student.username}</h3>
           <p>Birthday: {birthday.toLocaleDateString('en-US', options)}</p>
         </>
-      }
+      )}
     </div>
 
   );

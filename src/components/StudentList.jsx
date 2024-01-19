@@ -79,7 +79,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
       <div>
         {searchResults.length > 0 ? (
           searchResults.map((result)=>(
-            <Student key={result.id} student={result} />
+            <Student key={result.id} student={result} listView={listView}/>
           ))) : (
           <p>No student with a name containing "{searchInput}" found in {selectedCohort ? cohortTitle : "All Students"}.</p>
         )}
