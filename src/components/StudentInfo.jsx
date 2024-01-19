@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Student from "./Student";
 
-const StudentInfo = ({ allStudents }) => {
+const StudentInfo = ({ allStudents, matchingStudent }) => {
   // useParams
   const { id } = useParams();
   //useStates
   const [formInput, setFormInput] = useState({ author: '', comment: '' });
   const [notes, setNotes] = useState([]);
   const [student, setStudent] = useState(null);
-  useEffect
+  //useEffect
   useEffect(() => {
     // Find the selected student based on the id
     const matchingStudent = allStudents.find((student) => student.id === id);

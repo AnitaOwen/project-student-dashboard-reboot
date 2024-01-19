@@ -16,33 +16,25 @@ const Student = ({ student, listView }) => {
     <div>
       {listView ? (
         <>
+        <Link to={`student/${student.id}`}>
           <h3>
             {name.preferredName} {name.middleName} {name.surname}
           </h3>
+        </Link>
         </>
       ) : (
         <>
+        <Link to={`/student/${student.id}`}>
           <img src={student.profilePhoto} alt={name.preferredName} />
           <h3>
             {name.preferredName} {name.middleName} {name.surname}
           </h3>
           <p>{student.username}</p>
           <p>Birthday: {birthday.toLocaleDateString('en-US', options)}</p>
+        </Link>
         </>
       )}
     </div>
-
-
-//     <Link to={`/students/${student.id}`}>
-//       <div>
-//         <img src={student.profilePhoto} alt={name.preferredName} />
-//         <h2>
-//           {name.preferredName} {name.middleName} {name.surname}
-//         </h2>
-//         <h3>Email: {student.username}</h3>
-//         <p>Birthday: {student.dob}</p>
-//       </div>
-//     </Link>
 
   );
 };
