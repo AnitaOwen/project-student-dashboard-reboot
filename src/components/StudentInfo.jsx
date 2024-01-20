@@ -31,60 +31,101 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
   };
 
   return (
-    <div>
+ <div className="container">
       {student ? (
         <>
-          {/* Original Info */}
-          <Student student={student} />
+{/* Original Info */}
+<Student student={student} />
 
-          {/* Codewars Stats Heading */}
-          <h2>Codewars Stats</h2>
-          <p>Current Total: {student.codewars.current.total}</p>
-          <p>Last Week's Total: {student.codewars.current.lastWeek}</p>
-          <p>Goal Total: {student.codewars.goal.total}</p>
-          <p>
-            Percent of Goal Achieved:{" "}
-            {(
-              (student.codewars.current.total / student.codewars.goal.total) *
-              100
-            ).toFixed()}
-            %
-          </p>
+{/* Codewars Stats Table */}
+<h2>Codewars Stats</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>Current Total:</td>
+      <td className="table-value">{student.codewars.current.total}</td>
+    </tr>
+    <tr>
+      <td>Last Week's Total:</td>
+      <td className="table-value">{student.codewars.current.lastWeek}</td>
+    </tr>
+    <tr>
+      <td>Goal Total:</td>
+      <td className="table-value">{student.codewars.goal.total}</td>
+    </tr>
+    <tr>
+      <td>Percent of Goal Achieved:</td>
+      <td className="table-value">
+        {(
+          (student.codewars.current.total / student.codewars.goal.total) *
+          100
+        ).toFixed()}
+        %
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-          {/* Scores Heading */}
-          <h2>Scores</h2>
-          <p>
-            Assignments: {(student.cohort.scores.assignments * 100).toFixed()}%
-          </p>
-          <p>Projects: {(student.cohort.scores.projects * 100).toFixed()}%</p>
-          <p>
-            Assessments: {(student.cohort.scores.assessments * 100).toFixed()}%
-          </p>
+{/* Scores Table */}
+<h2>Scores</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>Assignments:</td>
+      <td className="table-value">{(student.cohort.scores.assignments * 100).toFixed()}%</td>
+    </tr>
+    <tr>
+      <td>Projects:</td>
+      <td className="table-value">{(student.cohort.scores.projects * 100).toFixed()}%</td>
+    </tr>
+    <tr>
+      <td>Assessments:</td>
+      <td className="table-value">{(student.cohort.scores.assessments * 100).toFixed()}%</td>
+    </tr>
+  </tbody>
+</table>
 
-          {/* Certifications Heading */}
-          <h2>Certifications</h2>
-          <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
-          <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
-          <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
-          <p>
-            Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}
-          </p>
-          <p>
-            Code Track Goal Reached? :{" "}
-            {student.codewars.current.total >= 850 ? "✅" : "❌"}
-          </p>
-          <p>
-            Student On Track?:{" "}
-            {student.certifications.resume &&
-            student.certifications.linkedin &&
-            student.certifications.github &&
-            student.certifications.mockInterview &&
-            student.codewars.current.total >= 850
-              ? "✅"
-              : "❌"}
-          </p>
+{/* Certifications Table */}
+<h2>Certifications</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>Resume:</td>
+      <td className="table-value">{student.certifications.resume ? "✅" : "❌"}</td>
+    </tr>
+    <tr>
+      <td>LinkedIn:</td>
+      <td className="table-value">{student.certifications.linkedin ? "✅" : "❌"}</td>
+    </tr>
+    <tr>
+      <td>GitHub:</td>
+      <td className="table-value">{student.certifications.github ? "✅" : "❌"}</td>
+    </tr>
+    <tr>
+      <td>Mock Interview:</td>
+      <td className="table-value">{student.certifications.mockInterview ? "✅" : "❌"}</td>
+    </tr>
+    <tr>
+      <td>Code Track Goal Reached:</td>
+      <td className="table-value">{student.codewars.current.total >= 850 ? "✅" : "❌"}</td>
+    </tr>
+    <tr>
+      <td>Student On Track:</td>
+      <td className="table-value">
+        {student.certifications.resume &&
+        student.certifications.linkedin &&
+        student.certifications.github &&
+        student.certifications.mockInterview &&
+        student.codewars.current.total >= 850
+          ? "✅"
+          : "❌"}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-          {/* 1-on-1 Notes Section */}
+
+{/* 1-on-1 Notes Section */}
           <section>
             <h3>1-on-1 Notes</h3>
             <form onSubmit={handleSubmit}>

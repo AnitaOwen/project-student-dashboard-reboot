@@ -9,7 +9,7 @@ const About = () => {
   //   navigate('/footer')
   // }
   return (
-    <div>
+  <div className='About-container'>
       <h1>About</h1>
       <body>
     <footer id='footer'>
@@ -42,7 +42,7 @@ const About = () => {
       </div>
     </footer>
     </body>
-    </div>
+</div>
   );
 };
 

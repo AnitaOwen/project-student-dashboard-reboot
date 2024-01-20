@@ -43,7 +43,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
     <main>
 
       <div>
-        <form>
+        <form className="search bar">
           <label htmlFor="searchInput">
           Search {cohortTitle ? cohortTitle : "All Students"}:
           </label>
@@ -69,7 +69,7 @@ const StudentList = ({ allStudents, selectedCohort }) => {
         {searchInput === "" && (
           <>
             <h2>{cohortTitle ? cohortTitle : "All Students"} ({count})</h2>
-            <div>
+            <div className="student">
               {allStudents.map((student) => (
               <Student key={student.id} student={student} listView={listView} />
               ))}
