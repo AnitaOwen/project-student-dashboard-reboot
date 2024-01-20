@@ -31,13 +31,14 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
   };
 
   return (
- <div className="container">
+<div className="container">
       {student ? (
         <>
 {/* Original Info */}
 <Student student={student} />
 
 {/* Codewars Stats Table */}
+<div>
 <h2>Codewars Stats</h2>
 <table>
   <tbody>
@@ -65,8 +66,9 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
     </tr>
   </tbody>
 </table>
-
+</div>
 {/* Scores Table */}
+<div>
 <h2>Scores</h2>
 <table>
   <tbody>
@@ -84,8 +86,10 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
     </tr>
   </tbody>
 </table>
+</div>
 
 {/* Certifications Table */}
+<div>
 <h2>Certifications</h2>
 <table>
   <tbody>
@@ -123,7 +127,7 @@ const StudentInfo = ({ allStudents, matchingStudent }) => {
     </tr>
   </tbody>
 </table>
-
+</div>
 
 {/* 1-on-1 Notes Section */}
           <section>
