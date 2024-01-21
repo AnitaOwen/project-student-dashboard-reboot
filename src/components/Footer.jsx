@@ -1,10 +1,12 @@
 import React from 'react';
-import "./Footer.css"
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-   <Link to="/about">About</Link>
+    <footer>
+    <Link to="/about">About</Link>
+    </footer>
+   
   );
 }
 

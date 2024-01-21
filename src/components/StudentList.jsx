@@ -42,8 +42,8 @@ const StudentList = ({ allStudents, selectedCohort }) => {
   return (
     <main>
 
-      <div>
-        <form>
+      <div className="search-format">
+        <form className="search bar">
           <label htmlFor="searchInput">
           Search {cohortTitle ? cohortTitle : "All Students"}:
           </label>
@@ -57,35 +57,35 @@ const StudentList = ({ allStudents, selectedCohort }) => {
           />
           </div>
         </form>
-      </div>
+      
 
-      <div>
+      
         <button onClick={handleListView}>
           {listView ? "Switch to Normal View" : "Switch to List View"}
         </button>
       </div>
       
       <div>
-        {searchInput === "" && (
+        {searchInput === "" ? (
           <>
             <h2>{cohortTitle ? cohortTitle : "All Students"} ({count})</h2>
-            <div>
+            <div className="student">
               {allStudents.map((student) => (
               <Student key={student.id} student={student} listView={listView} />
               ))}
             </div> 
           </>
-        )} 
-      </div>
-
-      <div>
+        ): <div className="student">
         {searchResults.length > 0 ? (
           searchResults.map((result)=>(
             <Student key={result.id} student={result} listView={listView}/>
           ))) : (
           <p>No student with a name containing "{searchInput}" found in {cohortTitle}.</p>
         )}
+      </div>} 
       </div>
+     
+
 
     </main>
   )

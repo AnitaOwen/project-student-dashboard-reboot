@@ -21,7 +21,7 @@ const Aside = ({ handleOnClick }) => {
   }
 
   return (
-    <div>
+    <div className="aside">
       <button onClick={handleSort}>
         {isReversed ? "Sort Ascending by Year" : "Sort Descending by Year"}
       </button>

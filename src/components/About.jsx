@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const About = () => {
-  // const navigate = useNavigate()
-
-  // const handleAboutButtonClick = () => {
-  //   navigate('/footer')
-  // }
+ 
   return (
-    <div>
-      <h1>About</h1>
+  <div className='About-container'>
+      <h2>About</h2>
       <body>
-    <footer id='footer'>
       <div id="about">
         <h4>About</h4>
         <ul className='socials'>
@@ -40,9 +35,9 @@ const About = () => {
           
         </ul>
       </div>
-    </footer>
+
     </body>
-    </div>
+</div>
   );
 };
 

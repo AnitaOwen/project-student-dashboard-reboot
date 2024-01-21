@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
       <Header />
-      
+      <section className="name-container">
       <Aside handleOnClick={handleOnClick} />
       <Routes>
       <Route path="/" element={<Home />} />
@@ -48,13 +48,16 @@ function App() {
         <Route index element={<StudentList allStudents={allStudents} selectedCohort={selectedCohort}/>} />
         <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort} selectedCohort={selectedCohort}/>} />
       </Route>
-      
       <Route path="/student/:id" element={<StudentInfo allStudents={allStudents} />} />
       
-      </Routes>
-      <Footer/>
+      
+    </Routes>
+    </section>
+    <Footer/>
+      
     </div>
   );
 }
 
 export default App;
+
