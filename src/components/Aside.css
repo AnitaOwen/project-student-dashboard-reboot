@@ -35,4 +35,22 @@
     height: 350px;
     width: 300px;
     padding: 8px;
+    margin-left: 10px;
+    border-radius: 4px;
+    padding-top: 18px
   } 
+
+
+  .aside button{
+    border-radius: 5px;
+    background-color: #9bb1d7;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 12%
+  }
+
+  .cohort-list-item{
+    margin-left: 10%;
+  }
