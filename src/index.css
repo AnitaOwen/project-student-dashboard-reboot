@@ -70,7 +70,12 @@ main {
   body, html {
     min-width: 100%;
   }
-
+  main {
+    margin-left: 50px;
+  }
+  .cohort-name {
+    min-width: 250px
+  }
   .name-container {
     flex-direction: column;
   }

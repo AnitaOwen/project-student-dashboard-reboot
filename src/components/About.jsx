@@ -16,7 +16,7 @@ const About = () => {
             <br />
             GitHub: <a href="https://github.com/ArmandoPires103" target="_blank" rel="">https://github.com/ArmandoPires103</a>
             <br />
-            Fun Fact: Can solve a Rubik's Cube in under a minute!
+            Fun Fact: Visited 7 national parks.
           </li>
           <li>
             <strong>Anita Owen</strong>
