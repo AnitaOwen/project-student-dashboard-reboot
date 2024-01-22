@@ -2,19 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Aside = ({ handleOnClick }) => {
+const Aside = ({ allStudents, handleOnClick }) => {
   const [isReversed, setIsReversed] = useState(false)
 
-  let cohortsList = [
-    "Winter 2025", 
-    "Spring 2025",
-    "Summer 2025",
-    "Fall 2025",
-    "Winter 2026",
-    "Spring 2026",
-    "Summer 2026",
-    "Fall 2026",
-  ]
+  // let cohortsList = [
+  //   "Winter 2025", 
+  //   "Spring 2025",
+  //   "Summer 2025",
+  //   "Fall 2025",
+  //   "Winter 2026",
+  //   "Spring 2026",
+  //   "Summer 2026",
+  //   "Fall 2026",
+  // ]
+  
+  let cohortsList = []
+  allStudents.filter((student) => {
+    if(!cohortsList.includes(student.cohort.cohortCode)){
+      cohortsList.push(student.cohort.cohortCode)
+    }
+  })
+  // console.log(cohortsList)
+
 
   function handleSort(){
     setIsReversed(!isReversed)

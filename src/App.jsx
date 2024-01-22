@@ -39,7 +39,7 @@ function App() {
     <div>
       <Header />
       <section className="name-container">
-      <Aside handleOnClick={handleOnClick} />
+      <Aside allStudents={allStudents} handleOnClick={handleOnClick} />
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
