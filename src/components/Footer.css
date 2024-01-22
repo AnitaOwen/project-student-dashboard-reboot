@@ -1,0 +1,18 @@
+/* FOOTER */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #0a0a0a;
+    /* padding-top: 40px; */
+    width:100vw;
+    text-align: center;
+    font-size: 26px;
+    
+  }
+  footer a{
+    text-decoration: none;
+    color: palevioletred;
+  }
+  

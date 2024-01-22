@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Student from "./Student";
 
-const StudentInfo = ({ allStudents, matchingStudent }) => {
+const StudentInfo = ({ allStudents }) => {
   // useParams
   const { id } = useParams();
   //useStates
