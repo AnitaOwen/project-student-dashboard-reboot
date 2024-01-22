@@ -53,6 +53,17 @@ div.student {
   gap: 40px;
 }
 
+main {
+  width: 80vw;
+}
+.cohort-name {
+  text-align: center;
+  width: 15vw;
+  box-shadow: 1px 1px 15px rgba(13, 28, 27, 0.825); 
+  background-color: #6bd3efb5;
+  padding-top: 2px;
+}
+
 /* Media queries for responsiveness */
 
 @media only screen and (max-width: 1100px) {
