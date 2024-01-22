@@ -39,13 +39,16 @@ const StudentList = ({ allStudents, selectedCohort }) => {
     cohortTitle = "All Students"
   } else if (selectedCohort && selectedCohort !== "All Students"){
     const titleArray = selectedCohort.split("")
+    // filter out characters that are not numbers (season)
     const season = titleArray.filter((char) => isNaN(+char) === true).join("")
+    // filter out characters that are numbers (year)
     const year = titleArray.filter((char) => isNaN(+char) === false).join("")
     cohortTitle = `${season} ${year}`
   }
 
   return (
     <main>
+      {/* search bar */}
       <div className="search-format">
         <form className="search bar">
           <label htmlFor="searchInput">
@@ -62,14 +65,14 @@ const StudentList = ({ allStudents, selectedCohort }) => {
           </div>
         </form>
       
-
-      
+        {/* button to toggle list view */}
         <button onClick={handleListView}>
           {listView ? "Switch to Normal View" : "Switch to List View"}
         </button>
       </div>
       
       <div>
+        {/* if search input is empty, display all students - else, display search input matches. */}
         {searchInput === "" ? (
           <>
             <h2 className="cohort-name">{cohortTitle ? cohortTitle : "All Students"}({count})</h2>
