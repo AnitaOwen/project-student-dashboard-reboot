@@ -15,10 +15,12 @@ function App() {
   const { cohortCode } = useParams();
   const [selectedCohort, setSelectedCohort] = useState(cohortCode)
 
+  // array of all student objects that match the selectedCohort state.
   const matchingCohort = allStudents.filter((student) => {
     return student.cohort.cohortCode === selectedCohort;
   });
-  console.log(matchingCohort)
+  // console.log(matchingCohort)
+
 
   function handleOnClick(cohort){
     setSelectedCohort(cohort)
@@ -48,8 +50,8 @@ function App() {
         <Route index element={<StudentList allStudents={allStudents} selectedCohort={selectedCohort}/>} />
         <Route path=":cohortCode" element={<StudentList allStudents={matchingCohort} selectedCohort={selectedCohort}/>} />
       </Route>
-      <Route path="/student/:id" element={<StudentInfo allStudents={allStudents} />} />
       
+      <Route path="/student/:id" element={<StudentInfo allStudents={allStudents} />} />
       
     </Routes>
     </section>
