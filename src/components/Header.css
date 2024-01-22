@@ -1,0 +1,16 @@
+/* HEADER */
+
+h1 { 
+    height: 100px; 
+    width: 100vw; 
+    padding: 0 30px; 
+    background-color: var(--background-color1); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 1px 1px 15px rgba(13, 14, 17, 0.825);  
+  }  
+  
+  .header {
+    margin-bottom: 20px;
+  }

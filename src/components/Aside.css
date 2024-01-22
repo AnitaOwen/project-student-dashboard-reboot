@@ -1,0 +1,38 @@
+/*Aside.css */
+
+.sidebar {
+    list-style-type: none;
+    /* margin: 80px 0 0; */
+    padding: 0;
+    width: 300px;
+    background-color: #2d3748;
+    color: #cbd5e0;
+  }
+  
+  .sidebar button {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .sidebar li a {
+    display: block;
+    color: #cbd5e0;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* color change on hover */
+   .sidebar li a:hover {
+    background-color: #3d72cf;
+    color: #fff;
+  } 
+  
+  .aside {
+    background-color: #2d3748;
+    height: 350px;
+    width: 300px;
+    padding: 8px;
+  } 
