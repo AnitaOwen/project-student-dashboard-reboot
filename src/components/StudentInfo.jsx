@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Student from "./Student";
 
+// Define function taking the prop allstudents
 const StudentInfo = ({ allStudents }) => {
-  // useParams
+  // useParams extract the id parameter
   const { id } = useParams();
   //useStates
   const [formInput, setFormInput] = useState({ author: "", comment: "" });
@@ -13,24 +14,29 @@ const StudentInfo = ({ allStudents }) => {
   useEffect(() => {
     // Find the selected student based on the id
     const matchingStudent = allStudents.find((student) => student.id === id);
+    // Update the student variable with the found student
     setStudent(matchingStudent);
   }, [allStudents, id]);
 
+  //Define function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
+    // Created form inputs
     const newNote = {
       author: formInput.author,
       comment: formInput.comment,
     };
+    //Updated note state with notes
     setNotes([...notes, newNote]);
+    // Updated form inputs to reset.
     setFormInput({ author: "", comment: "" });
   };
-
+  // Define function to update text change
   const handleTextChange = (event) => {
     setFormInput({ ...formInput, [event.target.name]: event.target.value });
   };
 
-  return (
+return (
 <div className="container">
       {student ? (
         <>
