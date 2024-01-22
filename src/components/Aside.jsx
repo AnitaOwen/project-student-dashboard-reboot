@@ -69,7 +69,7 @@ const Aside = ({ allStudents, handleOnClick }) => {
         {/* this is the link to All Students */}
         <li><Link to="/students" onClick={()=> handleOnClick("All Students")} className="cohort-list-item" >All Students</Link></li>
         
-        {/* if isReversed === true, display reversed sort formatted cohort list. Otherwise, display sorted formatted cohort list. */}
+        {/* if isReversed === true, display reversed sorted formatted cohort list. Otherwise, display sorted formatted cohort list. */}
         {isReversed ? [...sortedFormattedCohortsList].reverse().map((cohort) => (
           // handleOnClick(cohort) sets the selectedCohort state in App.jsx.
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
