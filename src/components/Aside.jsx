@@ -64,12 +64,12 @@ const Aside = ({ allStudents, handleOnClick }) => {
       <ul className="sidebar">
         <li><Link to="/students" onClick={()=> handleOnClick("All Students")}>All Students</Link></li>
         
-        {isReversed ? [...formattedCohortsList].reverse().map((cohort) => (
+        {isReversed ? [...sortedFormattedCohortsList].reverse().map((cohort) => (
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
             <Link to={`/students/${cohort.replace(" ", "")}`}>{cohort}</Link>
           </li>
         )) :
-        formattedCohortsList.map((cohort) => (
+        sortedFormattedCohortsList.map((cohort) => (
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
             <Link to={`/students/${cohort.replace(" ", "")}`}>{cohort}</Link>
           </li>
