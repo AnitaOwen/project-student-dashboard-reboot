@@ -45,12 +45,11 @@ const Aside = ({ allStudents, handleOnClick }) => {
     }
     const seasonsOrder = ["Winter", "Spring", "Summer", "Fall"]
     return seasonsOrder.indexOf(seasonA) - seasonsOrder.indexOf(seasonB)
-
   })
   // console.log(sortedFormattedCohortsList)
 
 
-  //  this is where we sort by ascending or dedscending.
+  //  this is where we sort by ascending or descending.
   function handleSort(){
     setIsReversed(!isReversed)
   }
