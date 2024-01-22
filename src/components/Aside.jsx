@@ -17,6 +17,7 @@ const Aside = ({ allStudents, handleOnClick }) => {
   //   "Fall 2026",
   // ]
   
+  // this is the list of all cohorts
   let cohortsList = []
   allStudents.filter((student) => {
     if(!cohortsList.includes(student.cohort.cohortCode)){
@@ -25,7 +26,31 @@ const Aside = ({ allStudents, handleOnClick }) => {
   })
   // console.log(cohortsList)
 
+  // this is where we format each cohort title.
+  const formattedCohortsList = cohortsList.map((cohort) => {
+    const cohortTitleArray = cohort.split("")
+    const season = cohortTitleArray.filter((char) => isNaN(+char) === true).join("")
+    const year = cohortTitleArray.filter((char) => isNaN(+char) === false).join("")
+    return `${season} ${year}`
+  })
+  // console.log(formattedCohortsList)
 
+
+  // this is where we sort the formatted cohort titles.
+  let sortedFormattedCohortsList = formattedCohortsList.sort((a, b)=> {
+    const [seasonA, yearA] = a.split(' ')
+    const [seasonB, yearB] = b.split(' ')
+    if(yearA !== yearB){
+      return parseInt(yearA) - parseInt(yearB)
+    }
+    const seasonsOrder = ["Winter", "Spring", "Summer", "Fall"]
+    return seasonsOrder.indexOf(seasonA) - seasonsOrder.indexOf(seasonB)
+
+  })
+  // console.log(sortedFormattedCohortsList)
+
+
+  //  this is where we sort by ascending or dedscending.
   function handleSort(){
     setIsReversed(!isReversed)
   }
@@ -39,12 +64,12 @@ const Aside = ({ allStudents, handleOnClick }) => {
       <ul className="sidebar">
         <li><Link to="/students" onClick={()=> handleOnClick("All Students")}>All Students</Link></li>
         
-        {isReversed ? [...cohortsList].reverse().map((cohort) => (
+        {isReversed ? [...formattedCohortsList].reverse().map((cohort) => (
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
             <Link to={`/students/${cohort.replace(" ", "")}`}>{cohort}</Link>
           </li>
         )) :
-        cohortsList.map((cohort) => (
+        formattedCohortsList.map((cohort) => (
           <li key={cohort} onClick={()=>handleOnClick(cohort.replace(" ", ""))}>
             <Link to={`/students/${cohort.replace(" ", "")}`}>{cohort}</Link>
           </li>

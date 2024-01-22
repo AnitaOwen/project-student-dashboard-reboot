@@ -5,12 +5,19 @@ import { useState } from "react";
 const StudentList = ({ allStudents, selectedCohort }) => {
   const [searchInput, setSearchInput] = useState("")
   const [listView, setListView] = useState(false)
+  
+  // function to toggle list view
+  function handleListView(){
+    setListView(!listView)
+  }
 
+  // Search bar text input
   function handleTextChange(event){
     const input = event.target.value
     setSearchInput(input)
   }
   
+  // filter names of matching students for search bar
   function filterStudents(){
     return allStudents.filter((student)=> {
       const name = student.names
@@ -22,10 +29,11 @@ const StudentList = ({ allStudents, selectedCohort }) => {
   }
   const searchResults = filterStudents()
   
-  
+  // the count of students prop
   const count = allStudents.length
   // console.log(count)
 
+  // formats the cohort title with a space.
   let cohortTitle = ""
   if(selectedCohort && selectedCohort === "All Students"){
     cohortTitle = "All Students"
@@ -36,12 +44,8 @@ const StudentList = ({ allStudents, selectedCohort }) => {
     cohortTitle = `${season} ${year}`
   }
 
-  function handleListView(){
-    setListView(!listView)
-  }
   return (
     <main>
-
       <div className="search-format">
         <form className="search bar">
           <label htmlFor="searchInput">
