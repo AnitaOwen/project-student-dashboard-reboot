@@ -152,6 +152,14 @@ const StudentInfo = ({ allStudents }) => {
                 <tr>
                   <td>Student On Track:</td>
                   <td className="table-value">{studentOnTrack(student)}</td>
+                  {/* old code:
+                      student.certifications.resume &&
+                      student.certifications.linkedin &&
+                      student.certifications.github &&
+                      student.certifications.mockInterview &&
+                      student.codewars.current.total >= 850
+                      ? "✅"
+                      : "❌"; */}
                 </tr>
               </tbody>
             </table>
