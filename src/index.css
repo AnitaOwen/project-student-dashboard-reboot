@@ -1,7 +1,8 @@
 /* */
 .info-box {
   margin-top: 5px;
-  color: #555;
+  color: #000000;
+  font-weight: 600;
 } 
 
 img {
@@ -30,7 +31,7 @@ body, html {
 
 div.student {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   
 }
 
@@ -46,7 +47,9 @@ div.student {
 .search-format button {
   margin-right: 60px;
 }
-
+.search-format :hover{
+  background-color: #6bd3efb5;
+}
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +74,7 @@ main {
     min-width: 100%;
   }
   main {
-    margin-left: 50px;
+    margin-left: 30px;
   }
   .cohort-name {
     min-width: 250px
