@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const About = () => {
   return (
     <div className="About-container">
-      <h2>About</h2>
+      <h2>About The Developers</h2>
       <body>
         <div id="about">
           <h4>About</h4>
@@ -32,7 +32,7 @@ const About = () => {
                 https://github.com/AnitaOwen
               </a>
               <br />
-              Fun Fact:
+              Fun Fact: Been a DJ for 18 years.
             </li>
             <li>
               <strong>Jazon Younge</strong>

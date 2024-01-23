@@ -18,7 +18,7 @@
   
   /* color change on hover */
    .sidebar li a:hover {
-    background-color: #3d72cf;
+    background-color: #6bd3efb5;
     color: #fff;
   } 
   
@@ -45,7 +45,7 @@
   }
 
   .aside button:hover {
-    background-color: #3d72cf;
+    background-color: #6bd3efb5;
     color: #fff;
   }
 

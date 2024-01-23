@@ -4,7 +4,7 @@ import Student from "./Student";
 
 // Define function taking the prop allstudents
 const StudentInfo = ({ allStudents }) => {
-  // useParams extract the id parameter
+  // useParams extract the id parameter from the URL
   const { id } = useParams();
   //useStates
   const [formInput, setFormInput] = useState({ author: "", comment: "" });
